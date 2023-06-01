@@ -1,13 +1,5 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-
-  Image,
-  TouchableOpacity,
-
-} from "react-native";
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import React from "react";
 import chevron from "../assets/chevron-right.png";
 import signature from "../assets/signature.png";
@@ -17,29 +9,26 @@ import icon2 from "../assets/icon2.png";
 import Checkbox from "expo-checkbox";
 
 const ThirdScreen = ({ navigation }) => {
-
   const CheckboxSelected = ({ value }) => (
     <View style={styles.descriptionItem}>
       <View style={styles.descriptionItemTextContainer}>
-        <Checkbox style={styles.checkbox} value={value} color={value ? "blue" : undefined} />
+        <Checkbox
+          style={styles.checkbox}
+          value={value}
+          color={value ? "blue" : undefined}
+        />
         <Text style={styles.descriptionItemText}>Division number</Text>
       </View>
     </View>
-  )
-
+  );
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.topNav}>
-
-
-        {/* <TouchableOpacity> */}
+      {/* <View style={styles.topNav}>
         <View style={styles.leftIconContainer}>
           <Image source={chevron} />
           <Text>Back</Text>
         </View>
-        {/* </TouchableOpacity> */}
-
 
         <View style={styles.mainText}>
           <Text>Set Up</Text>
@@ -48,18 +37,19 @@ const ThirdScreen = ({ navigation }) => {
         <View style={styles.rightIconContainers}>
           <Image source={signature} style={styles.leftIconItem} />
           <Image source={arrowUp} style={styles.leftIconItem} />
-          <Image source={plusIcon} style={styles.leftIconItem} />
         </View>
-
-      </View>
+      </View> */}
       <View style={styles.modalContainer}>
-
         <View style={styles.modal}>
           <View style={styles.topText}>
             <Text>Added FP20230417 division</Text>
-            <Text style={styles.modalLeftText} onPress={() => navigation.navigate("Fourth")}>Finish</Text>
+            <Text
+              style={styles.modalLeftText}
+              onPress={() => navigation.navigate("Fourth")}
+            >
+              Finish
+            </Text>
           </View>
-
 
           <View style={styles.description}>
             <TouchableOpacity style={styles.descriptionItem}>
@@ -71,15 +61,11 @@ const ThirdScreen = ({ navigation }) => {
               </View>
             </TouchableOpacity>
 
-
-
             <CheckboxSelected />
             <CheckboxSelected value={true} />
             <CheckboxSelected />
             <CheckboxSelected value={true} />
             <CheckboxSelected />
-
-
           </View>
         </View>
       </View>
@@ -97,25 +83,21 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    paddingHorizontal: 10
-
+    paddingHorizontal: 10,
   },
   leftIconContainer: {
     flexDirection: "row",
     alignItems: "center",
     gap: 10,
   },
-  mainText: {
-
-  },
+  mainText: {},
   rightIconContainers: {
     flexDirection: "row",
-
   },
   leftIconItem: {
     // width: 30,
     height: 30,
-    resizeMode: "contain"
+    resizeMode: "contain",
   },
   modalContainer: {
     position: "absolute",
